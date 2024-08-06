@@ -2,7 +2,7 @@ name: Prettier
 on:
     pull_request:
         paths:
-            - '**/*.{js|json}
+            - '**/*.{js|json}'
 
 jobs:
     format_check:
@@ -13,7 +13,7 @@ jobs:
           - uses: tj-actions/changed-files@v41
             id: changed-files
             with:
-              files: '**/*.{js|json}
+              files: '**/*.{js|json}'
               separator: ' '
           - uses: creyD/prettier_action@v4.3
             with:
