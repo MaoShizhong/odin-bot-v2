@@ -12,8 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: tj-actions/changed-files@v41
+        id: changed-files
+        with:
+          files: |
+            **/*.js
+            **/*.json
+            **/*.yml
+          separator: ' '
       - uses: creyD/prettier_action@v4.3
         with:
           dry: true
-          prettier_options: --check
-          only_changed: true
+          prettier_options: --check ${{ steps.changed-files.outputs.all_changed_files }}
