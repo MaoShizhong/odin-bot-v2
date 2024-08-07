@@ -4,7 +4,7 @@ on:
     paths:
       - '**/*.js'
       - '**/*.json'
-      - '**/*.yml'
+      - '**/*.ya?ml'
 
 jobs:
   format_check:
@@ -18,7 +18,7 @@ jobs:
           files: |
             **/*.js
             **/*.json
-            **/*.yml
+            **/*.ya?ml
           separator: ' '
       - uses: creyD/prettier_action@v4.3
         with:
