@@ -8,7 +8,7 @@ on:
 
 jobs:
   format_check:
-    name: Lint lesson files
+    name: Check JS/JSON/YML formatting
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
