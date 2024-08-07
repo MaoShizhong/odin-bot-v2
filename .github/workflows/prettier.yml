@@ -8,7 +8,7 @@ on:
 
 jobs:
   format_check:
-    name: Check JS/JSON/YML formatting
+    name: Check formatting
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
