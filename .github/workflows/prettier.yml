@@ -1,10 +1,10 @@
 name: Prettier
 on:
-  pull_request:
-    paths:
-      - '**/*.js'
-      - '**/*.json'
-      - '**/*.ya?ml'
+    pull_request:
+        paths:
+            - '**/*.js'
+            - '**/*.json'
+            - '**/*.ya?ml'
 
 jobs:
   format_check:
