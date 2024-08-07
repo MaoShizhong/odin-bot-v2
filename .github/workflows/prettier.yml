@@ -4,7 +4,7 @@ on:
     paths:
       - '**/*.js'
       - '**/*.json'
-      - '**/*.yml'
+      - '**/*.ya?ml'
 
 jobs:
   format_check:
@@ -12,11 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: tj-actions/changed-files@v41
+        id: changed-files
         with:
-          ref: ${{ github.head_ref }}
-          fetch-depth: 0
+          files: |
+            **/*.js
+            **/*.json
+            **/*.ya?ml
+          separator: ' '
       - uses: creyD/prettier_action@v4.3
         with:
           dry: True
-          only_changed: True
-          prettier_options: --check .
+          prettier_options: --check ${{ steps.changed-files.outputs.all_changed_files }}
